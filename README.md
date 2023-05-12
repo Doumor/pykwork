@@ -21,7 +21,7 @@ await self.api_request(
 
 Последняя версия (рекомендуется):
 ```
-pip install https://github.com/kesha1225/pykwork/archive/master.zip --upgrade
+pip install https://github.com/doumor/pykwork/archive/master.zip --upgrade
 ```
 
 Версия на pypi (может быть устаревшей):
