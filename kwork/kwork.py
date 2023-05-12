@@ -132,6 +132,24 @@ class Kwork:
 
         return dialogs
 
+    async def get_dialogs(self) -> typing.List[DialogMessage]:
+        page = 1
+        dialogs: typing.List[DialogMessage] = []
+
+        dialogs_page = await self.api_request(
+            method="post",
+            api_method="dialogs",
+            filter="all",
+            page=page,
+            token=await self.token,
+        )
+
+        return dialogs
+
+#    async def read_message(self, user_id: int) -> dict:  # noqa
+#        TODO        
+#        return 1
+    
     async def set_offline(self) -> dict:
         return await self.api_request(
             method="post", api_method="offline", token=await self.token
