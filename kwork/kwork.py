@@ -146,10 +146,15 @@ class Kwork:
 
         return dialogs
 
-#    async def read_message(self, user_id: int) -> dict:  # noqa
-#        TODO        
-#        return 1
-    
+    async def read_dialog(self, user_id: int) -> dict:
+        return await self.api_request(
+            method="post",
+            api_method="inboxRead",
+            filter="all",
+            user_id=user_id,
+            token=await self.token,
+        )
+
     async def set_offline(self) -> dict:
         return await self.api_request(
             method="post", api_method="offline", token=await self.token
